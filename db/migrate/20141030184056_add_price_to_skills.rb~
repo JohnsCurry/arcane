@@ -1,0 +1,4 @@
+class AddPriceToSkills < ActiveRecord::Migration
+  def change
+  end
+end
