@@ -1,0 +1,26 @@
+.only_form
+  .content Submit a new place for us to learn stuff!
+  %br
+  =form_for @skill do |f|
+    =f.text_field :title
+    =f.label :title
+    %br
+    %br
+    =f.text_field :url
+    =f.label :website_domain
+    .content (ex. www.google.com)
+    %br
+    %br
+    =f.text_field :price
+    =f.label :price
+    %br
+    %br
+    =f.text_field :description
+    =f.label :description
+    %br
+    =f.label "Categories"
+    =f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|
+      =cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text}
+    %br
+    %br
+    =f.submit
