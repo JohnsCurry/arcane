@@ -50,10 +50,10 @@ body {
      float: right;
 }
 
-.top_of_menu {
+.below_menu {
      position: relative;
-     top:  -10px;
-     left: -350px;
+     top: 660px;
+     left: -965px;
 }
 
 .box {
