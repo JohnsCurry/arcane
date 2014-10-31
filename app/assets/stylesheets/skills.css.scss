@@ -1,0 +1,65 @@
+body {
+  /*   background-color: #66ff33; */
+     }
+
+.only_form {
+     position: absolute;
+     top:200px;
+     left:500px;
+     }
+
+.skill_position {
+     position: relative;
+     }
+
+.skill_information {
+     float: left;
+}
+
+.menu_box {
+     float: left;
+     width: 200px;
+     height: 550px;
+     padding: 25px;
+     border: 10px solid navy;
+     margin: 25px;
+}
+
+.menu_button {
+     padding: 10px 15px;
+     background: #66FFFF;
+     color: #FFF;
+     -webkit-border-radius: 8px;
+     text-align: center;
+}
+
+.above_menu {
+     position: relative;
+     top: 20px;
+     left: 70px;
+     color: red;
+}
+
+.right_of_menu {
+     float: left;
+     top: 20px;
+     left: 500px;
+}
+
+.right_of_image {
+     float: right;
+}
+
+.below_menu {
+     position: relative;
+     top: 660px;
+     left: -965px;
+}
+
+.box {
+     box-shadow: 3px 3px red, -1em 0 0.4em olive;
+}
+
+.clear {
+     clear: both;
+}
