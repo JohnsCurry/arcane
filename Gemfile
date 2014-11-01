@@ -7,14 +7,16 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'haml'
 gem 'shoulda'
 gem 'fabrication'
-
+# therubyracer, less-rails, and twitter-bootstrap are bootstrap gems
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 group :doc do
   gem 'sdoc', require: false
 end
@@ -49,3 +51,9 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
+
+#these are bootstrap the bootstrap files      app/assets/javascripts/application.js
+#these are bootstrap the bootstrap files      app/assets/javascripts/bootstrap.js.coffee
+#these are bootstrap the bootstrap files      app/assets/stylesheets/bootstrap_and_overrides.css.less
+#these are bootstrap the bootstrap files      config/locales/en.bootstrap.yml
+#these are bootstrap the bootstrap files      app/assets/stylesheets/application.css

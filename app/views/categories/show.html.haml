@@ -3,16 +3,19 @@
   -@categories.each do |category|
     .menu_button= link_to "#{category.name}", category_path(category)
     %br
-    %br
+%br
 
 .right_of_menu
   -@category.skills.each do |skill|
-    .skill_position
+    .well   
       %h2= skill.title
       =image_tag skill.image
       .right_of_image
-        %strong= skill.url
+        %strong= link_to "go to #{skill.title}", skill.url, :target => '_blank'
         %br
-        %strong= skill.description
+        %strong.code#message Description:
         %br
+        %strong= wrap(skill.description.to_s, 65)
+        %br
+        %strong.code#message Price:
         %strong= skill.price

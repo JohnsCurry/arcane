@@ -8,14 +8,17 @@
 
 .right_of_menu
   -@skills.each_with_index do |skill, index|
-    .skill_position
+    .well
       %h2= skill.title
       =image_tag skill.image
       .right_of_image
         %strong= link_to "go to #{skill.title}", skill.url, :target => '_blank'
         %br
+        %strong.code#message Description:
+        %br
         %strong= wrap(skill.description.to_s, 65)
         %br
+        %strong.code#message Price:
         %strong= skill.price
     .clear
 .top_of_menu
