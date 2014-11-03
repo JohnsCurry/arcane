@@ -1,4 +1,4 @@
-.above_menu Choose From A Category
+.above_menu Categories
 .menu_box
   -@categories.each do |category|
     .menu_button= link_to "#{category.name}", category_path(category)
@@ -9,7 +9,7 @@
 .right_of_menu
   -@skills.each_with_index do |skill, index|
     .well
-      %h2= skill.title
+      %h2= link_to "#{skill.title}"
       =image_tag skill.image
       .right_of_image
         %strong= link_to "go to #{skill.title}", skill.url, :target => '_blank'
@@ -22,5 +22,3 @@
         %strong= skill.price
     .clear
 .top_of_menu
-  = link_to  'create a skill', new_skill_path
-  = link_to 'New Category', new_category_path
