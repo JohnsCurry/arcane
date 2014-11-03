@@ -4,7 +4,6 @@
   -@categories.each do |category|
     .menu_button= link_to "#{category.name}", category_path(category)
     %br
-    %br
 
 
 .right_of_menu
@@ -12,7 +11,7 @@
     %br
     =link_to 'edit', edit_skill_path(skill) if current_user != nil
     .well
-      %h2= link_to "#{skill.title}"
+      %h2= link_to "#{skill.title}", skill.url, :target => '_blank'
       =image_tag skill.image
       .right_of_image
         %strong= link_to "go to #{skill.title}", skill.url, :target => '_blank'
