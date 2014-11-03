@@ -7,6 +7,21 @@ class SkillsController < ApplicationController
   def new
     @skill = Skill.new
   end
+
+  def edit
+    @skill = Skill.find(params[:id])
+  end
+
+  def update
+    @skill = Skill.find(params[:id])
+    if @skill.update(skill_params)
+      flash[:notice] = "Skill was updated"
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+  
   def create
     @skill = Skill.new(skill_params)
     if @skill.save

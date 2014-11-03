@@ -1,3 +1,4 @@
+=link_to 'Logout', logout_path if current_user != nil
 .above_menu Categories
 .menu_box
   -@categories.each do |category|
@@ -8,6 +9,7 @@
 
 .right_of_menu
   -@skills.each_with_index do |skill, index|
+    =link_to 'edit', edit_skill_path(skill) if current_user != nil
     .well
       %h2= link_to "#{skill.title}"
       =image_tag skill.image
