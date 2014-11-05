@@ -13,12 +13,17 @@ describe Category do
   
   context "with Invalid inputs" do
     it "is invalid without a name" do
-      expect(Category.new(name: nil)).to have(1).errors_on(:name)
+      record = Category.create(name: nil)
+
+      record.valid?
+      expect(record.errors[:name].size).to eq(1)
     end
     it "is invalid with a duplicate name" do
       Category.create(name: "Swimming")
-      new = Category.new(name: "Swimming")
-      expect(new).to have(1).errors_on(:name)
+      record = Category.create(name: "Swimming")
+
+      record.valid?
+      expect(record.errors[:name].size).to eq(1)
     end
   end
 end

@@ -1,0 +1,12 @@
+require 'spec_helper'
+
+describe User do
+  context "With valid inputs" do
+    it "is valid with a username" do
+      user = User.new(
+                      username: 'curry'
+                      )
+      expect(user).to be_valid
+    end
+  end
+end
