@@ -7,7 +7,7 @@
 
 .right_of_menu
   -skills.each_with_index do |skill, index|
-    -if skill.banner == nil
+    -if skill.banner == nil || skill.banner == ""
       %br
       =link_to 'edit', edit_skill_path(skill) if current_user != nil
       .well
