@@ -7,19 +7,35 @@
 
 .right_of_menu
   -skills.each_with_index do |skill, index|
-    %br
-    =link_to 'edit', edit_skill_path(skill) if current_user != nil
-    .well
-      %h2= link_to "#{skill.title}", skill.url, :target => '_blank'
-      =image_tag skill.image
-      .right_of_image
-        %strong= link_to "go to #{skill.title}", skill.url, :target => '_blank'
-        %br
-        %strong.code#message Description:
-        %br
-        %strong= wrap(skill.description.to_s, 65)
-        %br
-        %strong.code#message Price:
-        %strong= skill.price
+    -if skill.banner == nil
+      %br
+      =link_to 'edit', edit_skill_path(skill) if current_user != nil
+      .well
+        %h2= link_to "#{skill.title}", skill.url, :target => '_blank'
+        =image_tag skill.image
+        .right_of_image
+          %strong= link_to "go to #{skill.title}", skill.url, :target => '_blank'
+          %br
+          %strong.code#message Description:
+          %br
+          %strong= wrap(skill.description.to_s, 65)
+          %br
+          %strong.code#message Price:
+          %strong= skill.price
+    -else
+      %br
+      =link_to 'edit', edit_skill_path(skill) if current_user != nil
+      .well
+        %h2= skill.title
+        = skill.banner.html_safe
+        .right_of_image
+          %strong= "Click on image to visit #{skill.title}"
+          %br
+          %strong.code#message Description:
+          %br
+          %strong= wrap(skill.description.to_s, 65)
+          %br
+          %strong.code#message Price:
+          %strong= skill.price
     .clear
 .top_of_menu

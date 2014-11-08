@@ -1,0 +1,4 @@
+class AddBannerToSkills < ActiveRecord::Migration
+  def change
+  end
+end

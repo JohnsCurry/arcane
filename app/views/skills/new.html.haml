@@ -21,6 +21,9 @@
     =f.text_field :image
     =f.label :image
     %br
+    =f.text_field :banner
+    =f.label :banner
+    %br
     =f.label "Categories"
     =f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|
       =cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text}
