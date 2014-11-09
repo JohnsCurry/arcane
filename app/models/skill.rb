@@ -2,7 +2,6 @@ class Skill < ActiveRecord::Base
   has_many :skill_categories
   has_many :categories, through: :skill_categories
   validates :description, presence: true
-  validates :url, presence: true
   validates :title, presence: true
 
   def self.sort_all_my_skills
