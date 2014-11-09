@@ -11,10 +11,10 @@
       %br
       =link_to 'edit', edit_skill_path(skill) if current_user != nil
       .well
-        %h2= link_to "#{skill.title}", skill.url, :target => '_blank'
+        %h2= skill.title
         =image_tag skill.image
         .right_of_image
-          %strong= link_to "go to #{skill.title}", skill.url, :target => '_blank'
+          %strong= link_to "#{skill.title}", skill.url, :target => '_blank'
           %br
           %strong.code#message Description:
           %br
@@ -27,9 +27,9 @@
       =link_to 'edit', edit_skill_path(skill) if current_user != nil
       .well
         %h2= skill.title
-        = skill.banner.html_safe
+        =image_tag skill.image
         .right_of_image
-          %strong= "Click on image to visit #{skill.title}"
+          = skill.banner.html_safe
           %br
           %strong.code#message Description:
           %br
