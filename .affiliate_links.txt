@@ -1,3 +1,4 @@
+web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb  - goes in Procfile
 Codeschool.com
 
 earn with this - http://mbsy.co/CodeSchool/14320315
@@ -19,3 +20,10 @@ Lynda.com
 Udemy.com
 
 affiliates@udemy.com
+
+
+
+
+
+
+Virtual Training Company
