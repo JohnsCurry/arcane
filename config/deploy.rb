@@ -3,7 +3,7 @@ require "bundler/capistrano"
 server "173.230.151.17", :web, :app, :db, primary: true
 
 set :application, "arcane"
-set :user, "root"
+set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
