@@ -7,6 +7,7 @@ set :user, "root"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :default_stage, "production"
 
 set :scm, "git"
 set :repository, "git@github.com:JohnsCurry/#{application}.git"
