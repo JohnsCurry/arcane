@@ -1,5 +1,4 @@
 =link_to 'Logout', logout_path if current_user != nil
-.above_menu Categories
 .menu_box
   -@categories.each do |category|
     .menu_button= link_to "#{category.name}", category_path(category)
