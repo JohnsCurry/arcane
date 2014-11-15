@@ -37,7 +37,7 @@ group :test do
   gem "selenium-webdriver", "~> 2.39.0"
   gem "database_cleaner", '1.2.0'
 end
-
+gem "rack-reverse-proxy", require: "rack/reverse_proxy"
 gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
