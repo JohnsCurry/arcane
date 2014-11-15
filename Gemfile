@@ -42,12 +42,12 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
- gem 'unicorn'
+# gem 'unicorn'
 
 # Use Capistrano for deployment
- gem 'capistrano', '2.15.5'
- gem 'net-ssh', '2.7.0'
- gem 'net-ssh-gateway', '1.2.0'
+# gem 'capistrano', '2.15.5'
+# gem 'net-ssh', '2.7.0'
+# gem 'net-ssh-gateway', '1.2.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
