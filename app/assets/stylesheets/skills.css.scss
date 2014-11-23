@@ -8,37 +8,6 @@ body {
      left:500px;
      }
 
-.skill_position {
-     position: relative;
-     }
-
-.skill_information {
-     float: left;
-}
-
-.menu_box {
-     float: left;
-     width: 200px;
-     height: 550px;
-     padding: 25px;
-     border: 10px solid navy;
-     margin: 10px;
-}
-
-.menu_button {
-     padding: 10px 15px;
-     background: #66FFFF;
-     color: #FFF;
-     -webkit-border-radius: 8px;
-     text-align: center;
-}
-
-.above_menu {
-     position: relative;
-     top: 20px;
-     left: 70px;
-     color: red;
-}
 
 .right_of_menu {
      float: left;
@@ -48,16 +17,6 @@ body {
 
 .right_of_image {
      float: right;
-}
-
-.top_of_menu {
-     position: relative;
-     top:  -10px;
-     left: -350px;
-}
-
-.box {
-     box-shadow: 3px 3px red, -1em 0 0.4em olive;
 }
 
 .clear {
