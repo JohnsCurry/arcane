@@ -2,7 +2,6 @@ class SkillsController < ApplicationController
   def index
     @categories = Category.all
     @skills = Skill.all
-    #left, middle, right = Skill.all.sort_all_my_skills
   end
   def new
     @skill = Skill.new
@@ -30,6 +29,10 @@ class SkillsController < ApplicationController
     else
       flash[:error] = "You need to have a title"
     end
+  end
+
+  def home
+    @categories = Category.all
   end
 
   private

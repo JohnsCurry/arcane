@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'skills#index'
+  root 'skills#home'
   get '/logout', to: 'sessions#destroy'
   #match "/blog" => redirect("/blog/")
   resources :skills
