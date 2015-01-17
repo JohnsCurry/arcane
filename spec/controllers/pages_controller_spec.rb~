@@ -1,0 +1,12 @@
+require 'spec_helper'
+
+describe PagesController do
+  describe "GET home" do
+    it "sets @skills" do
+      code = Fabricate(:skill)
+      fitness = Fabricate(:skill)
+      get :home
+      expect(assigns(:skills)).to eq([code, fitness])
+    end
+  end
+end

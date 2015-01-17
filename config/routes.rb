@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'skills#home'
+  root 'pages#front'
   get '/logout', to: 'sessions#destroy'
   #match "/blog" => redirect("/blog/")
+  resources :categories 
   resources :skills
-  resources :categories
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
