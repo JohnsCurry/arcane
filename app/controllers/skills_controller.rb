@@ -3,11 +3,14 @@ class SkillsController < ApplicationController
     @categories = Category.all
     @skills = Skill.all
   end
+  
   def new
+    @categories = Category.all
     @skill = Skill.new
   end
 
   def edit
+    @categories = Category.all
     @skill = Skill.find(params[:id])
   end
 
