@@ -19,6 +19,5 @@ class Skill < ActiveRecord::Base
       end
     end
     return left, middle, right
-    binding.pry
   end
 end

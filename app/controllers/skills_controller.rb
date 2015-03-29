@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_action :require_user, only: [:edit, :update, :new, :create]
   def index
     @categories = Category.all
     @skills = Skill.all

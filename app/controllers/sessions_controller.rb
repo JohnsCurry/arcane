@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  before_action :set_categories
+  def new
+    redirect_to root_path if current_user
+  end
+  
   def create
     user = User.find_by(username: params[:username])
 

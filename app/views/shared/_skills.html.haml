@@ -3,7 +3,7 @@
 .right_of_menu
   -skills.each_with_index do |skill, index|
     %br
-    =link_to 'edit', edit_skill_path(skill)
+    =link_to 'edit', edit_skill_path(skill) if logged_in?
     .well
       %h2= skill.title
       =image_tag skill.image

@@ -39,7 +39,7 @@ group :test do
 end
 gem "rack-reverse-proxy", require: "rack/reverse_proxy"
 gem 'spring',        group: :development
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
