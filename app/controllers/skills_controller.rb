@@ -1,17 +1,15 @@
 class SkillsController < ApplicationController
+  before_action :set_categories
   before_action :require_user, only: [:edit, :update, :new, :create]
   def index
-    @categories = Category.all
     @skills = Skill.all
   end
   
   def new
-    @categories = Category.all
     @skill = Skill.new
   end
 
   def edit
-    @categories = Category.all
     @skill = Skill.find(params[:id])
   end
 
@@ -35,8 +33,11 @@ class SkillsController < ApplicationController
     end
   end
 
+  def show
+    @skill = Skill.find(params[:id])
+  end
+
   def home
-    @categories = Category.all
   end
 
   private
