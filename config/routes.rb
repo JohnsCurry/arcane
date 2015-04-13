@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   #match "/blog" => redirect("/blog/")
   resources :categories 
-  resources :skills
+  resources :skills do
+    resources :reviews, only: [:create]
+  end
   resources :users
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

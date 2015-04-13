@@ -23,5 +23,14 @@ describe SkillsController do
       get :show, id: skill.id
       expect(assigns(:skill)).to eq(skill)
     end
+
+    it "sets @reviews for authenticated users" do
+      session[:user_id] = Fabricate(:user).id
+      skill = Fabricate(:skill)
+      review1 = Fabricate(:review, skill: skill)
+      review2 = Fabricate(:review, skill: skill)
+      get :show, id: skill.id
+      expect(assigns(:reviews)).to match_array([review1, review2])
+    end
   end
 end

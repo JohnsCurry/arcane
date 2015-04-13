@@ -35,6 +35,7 @@ class SkillsController < ApplicationController
 
   def show
     @skill = Skill.find(params[:id])
+    @reviews = @skill.reviews
   end
 
   def home

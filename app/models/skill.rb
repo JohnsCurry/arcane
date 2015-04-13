@@ -1,4 +1,5 @@
 class Skill < ActiveRecord::Base
+  has_many :reviews, -> { order("created_at DESC") }
   has_many :skill_categories
   has_many :categories, through: :skill_categories
   validates_presence_of :description, :title, :url
