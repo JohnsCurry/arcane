@@ -6,6 +6,14 @@ class Skill < ActiveRecord::Base
 #  validates :description, presence: true
 #  validates :title, presence: true
 
+  
+  def average_rating
+    sum_of_ratings = 0.0
+    self.reviews.each {|review| sum_of_ratings += review.rating.to_f}
+    average_rating = (sum_of_ratings / self.reviews.count.to_f)
+    return average_rating.round(1)
+  end
+  
   def self.sort_all_my_skills
     left = []
     middle = []

@@ -8,7 +8,15 @@ describe Skill do
   it { should have_many(:reviews).order("created_at DESC")}
 
   describe "#average_rating" do
-    it "calculates the average"
+    it "calculates the average" do
+      user = Fabricate(:user)
+      user2 = Fabricate(:user)
+      skill = Fabricate(:skill)
+      review = Fabricate(:review, rating: 1.0, user: user, skill: skill)
+      review2 = Fabricate(:review, rating: 5.0, user: user2, skill: skill)
+      expect(skill.average_rating).to eq(3)
+      
+    end
   end
   
 end
