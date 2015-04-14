@@ -1,0 +1,84 @@
+<fieldset class="rating">
+  <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+
+  
+    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+</fieldset>
+
+<div class="jumbotron">
+  <h1>Welcome!</h1>
+  <h3>Want to learn something?</h3>
+  <p>It's our goal to bring education of all forms to one place. Our goal is to make sure only the highest quality curriculum is presented to you, saving you money and time, and preventing you from frustration and burnout. You can trust the material that you will find here.</p>
+  <p><a class="btn btn-primary btn-lg" href="skills" role="button">Learn more</a></p>
+</div>
+<div class="col-md-4">
+  <h2>Learn Anything!</h2>
+  <p>Learn anything from coding, photography, marketing, business, Linux and more. We're working on adding college courses too. Can't find what you're looking for? Let us know! We want to hear from you</p>
+</div>
+<div class="col-md-4">
+  <h2>Change Careers!</h2>
+  <p>Our goal is to get you from where you are to where you want to be as quickly as possible. Don't wait for a Bachelors degree. Get an entry level position NOW and then when you get your bachelors degree you'll have four years of experience AND a degree.</p>
+</div>
+
+<div class="col-md-4">
+  <h2>Advance Your Skills</h2>
+  <p>Want a better job, to run your own business, to become a freelancer, get a degree online, or even change careers entirely? With our resources you can stay ahead of the game and always be on the forefront of your industry</p>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="col-md-4">
+  <div class="btn-group">
+    <button class="btn"><%= @categories[0].name %></button>
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <% @categories[0].skills.each do |skill| %>
+      <li><%= link_to "#{skill.title}", skill.url, :target => '_blank' %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="btn-group">
+    <button class="btn"><%= @categories[1].name %></button>
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <% @categories[1].skills.each do |skill| %>
+      <li><%= link_to "#{skill.title}", skill.url, :target => '_blank' %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="btn-group">
+    <button class="btn"><%= @categories[2].name %></button>
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <% @categories[2].skills.each do |skill| %>
+      <li><%= link_to "#{skill.title}", skill.url, :target => '_blank' %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

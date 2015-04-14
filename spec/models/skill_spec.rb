@@ -15,7 +15,13 @@ describe Skill do
       review = Fabricate(:review, rating: 1.0, user: user, skill: skill)
       review2 = Fabricate(:review, rating: 5.0, user: user2, skill: skill)
       expect(skill.average_rating).to eq(3)
-      
+    end
+
+    it "returns 'no ratings yet' if no ratings are present" do
+      user = Fabricate(:user)
+      user2 = Fabricate(:user)
+      skill = Fabricate(:skill)
+      expect(skill.average_rating).to eq("no ratings yet")
     end
   end
   

@@ -5,6 +5,29 @@
     %br
     =link_to 'edit', edit_skill_path(skill) if logged_in?
     .well
+      .pull-right
+        %fieldset{:class => "rating"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 5.0, 4.5)}
+          %label{:class => "full", :for => "#{skill.id} star5.0", :title => "5.0"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 4.5, 4.0)}
+          %label{:class => "half", :for => "#{skill.id} star4.5", :title => "4.5"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 4.0, 3.5)}
+          %label{:class => "full", :for => "#{skill.id} star4.0", :title => "4.0"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 3.5, 3.0)}
+          %label{:class => "half", :for => "#{skill.id} star3.5", :title => "3.5"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 3.0, 2.5)}
+          %label{:class => "full", :for => "#{skill.id} star3.0", :title => "3.0"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 2.5, 2.0)}
+          %label{:class => "half", :for => "#{skill.id} star2.5", :title => "2.5"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 2.0, 1.5)}
+          %label{:class => "full", :for => "#{skill.id} star2.0", :title => "2.0"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 1.5, 1.0)}
+          %label{:class => "half", :for => "#{skill.id} star1.5", :title => "1.5"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 1.0, 0.5)}
+          %label{:class => "full", :for => "#{skill.id} star1.0", :title => "1.0"}
+          %input{radio_input(skill.average_rating, skill.id, skill.title, 0.5, 0.0)}
+          %label{:class => "half", :for => "#{skill.id} star0.5", :title => "0.5"}
+          = skill.average_rating
       %h2= skill.title
       =image_tag skill.image
       .right_of_image

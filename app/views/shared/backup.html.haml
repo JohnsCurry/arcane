@@ -1,0 +1,32 @@
+=link_to 'Logout', logout_path if current_user != nil
+
+.right_of_menu
+  -skills.each_with_index do |skill, index|
+    %br
+    =link_to 'edit', edit_skill_path(skill) if logged_in?
+    .well
+      .pull-right
+        %fieldset{:class => "rating"}
+          %input{:type => "radio", :id => "star5", :name => "rating", :value => "5"}
+          %label{:class => "full", :for => "star5", :title => "Awesome - 5 stars"}
+          %input{:type => "radio", :id => "star4half", :name => "rating", :value => "4 and a half"}
+          %label{:class => "half", :for => "star4half", :title => "Pretty good - 4.5 stars"}
+            
+          = skill.average_rating
+      %h2= skill.title
+      =image_tag skill.image
+      .right_of_image
+        -if skill.banner == nil || skill.banner == ""
+          %strong= link_to "#{skill.title}", skill.url, :target => '_blank'
+        -else
+          = skill.banner.html_safe
+        %br
+        %strong.code#message Description:
+        %br
+        %strong= wrap(skill.description.to_s, 65)
+        %br
+        %strong.code#message Price:
+        %strong= skill.price
+        %br
+        %strong= link_to "Learn More", skill_path(skill)
+    .clear

@@ -4,14 +4,17 @@ class Skill < ActiveRecord::Base
   has_many :categories, through: :skill_categories
   validates_presence_of :description, :title, :url
 #  validates :description, presence: true
-#  validates :title, presence: true
+  #  validates :title, presence: true
 
-  
   def average_rating
     sum_of_ratings = 0.0
     self.reviews.each {|review| sum_of_ratings += review.rating.to_f}
-    average_rating = (sum_of_ratings / self.reviews.count.to_f)
-    return average_rating.round(1)
+    if self.reviews.count != 0
+      average_rating = (sum_of_ratings / self.reviews.count.to_f).round(1)
+    else
+      average_rating = "no ratings yet"
+    end
+    return average_rating
   end
   
   def self.sort_all_my_skills
