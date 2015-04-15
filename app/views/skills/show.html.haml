@@ -1,3 +1,4 @@
+%br
 %fieldset{:class => "rating"}
   %input{radio_input(@skill.average_rating, @skill.id, @skill.title, 5.0, 4.5)}
   %label{:class => "full", :for => "#{@skill.id} star5.0", :title => "5.0"}
@@ -19,21 +20,29 @@
   %label{:class => "full", :for => "#{@skill.id} star1.0", :title => "1.0"}
   %input{radio_input(@skill.average_rating, @skill.id, @skill.title, 0.5, 0.0)}
   %label{:class => "half", :for => "#{@skill.id} star0.5", :title => "0.5"}
-= @skill.average_rating
+  %strong Average Rating:
+  = @skill.average_rating
+%br
+%br
 .right_of_menu
   -@skill.reviews.each do |review|
     %br
     .well
+      %strong Review by:
+      =review.user.username
+      %br
+      %strong Rating: #{review.rating} of 5
+      %br
+      %strong Review:
       =review.content
-      =review.rating
-
-= form_for [@skill, Review.new] do |f|
-  %label Rate this skill
-  = f.select :rating, options_for_select([5,4,3,2,1].map {|number| [pluralize(number, "Star")]})
-  %br  
-  %label Write a review
-  %br
-  = f.text_area :content, rows: 6, class: "span6"
-  %fieldset.actions.clearfix    
-  %input(type="submit" value="Submit" class="btn")
-
+      
+.pull-right
+  = form_for [@skill, Review.new] do |f|
+    %label Rate this skill
+    = f.select :rating, options_for_select([5,4,3,2,1].map {|number| [pluralize(number, "Star")]})
+    %br  
+    %label Write a review
+    %br
+    = f.text_area :content, rows: 6, class: "span6"
+    %fieldset.actions.clearfix    
+    %input(type="submit" value="Submit" class="btn")
