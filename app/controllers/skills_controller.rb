@@ -38,6 +38,12 @@ class SkillsController < ApplicationController
     @reviews = @skill.reviews
   end
 
+  def destroy
+    @skill = Skill.find(params[:id])
+    @skill.destroy
+    redirect_to root_path
+  end
+
   def home
   end
 

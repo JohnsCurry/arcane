@@ -4,6 +4,7 @@
   -skills.each_with_index do |skill, index|
     %br
     =link_to 'edit', edit_skill_path(skill) if logged_in?
+    =link_to 'destroy', skill_path(skill), :confirm => 'Are you sure?', :method => :delete if logged_in?
     .well
       .pull-right
         %fieldset{:class => "rating"}
